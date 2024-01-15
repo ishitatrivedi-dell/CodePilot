@@ -1,5 +1,5 @@
 Project Initial Report
-# Project Name: CodeVista
+# Project Name: CodePilot
 # Which problem is Project Solving?
 - The website provides a centralized platform for creating, managing, and evaluating coding tests. This streamlines the assessment process, making it more efficient for both test creators and test-takers.
 - The platform generates detailed analytics and reports, offering insights into individual and group performance. This data-driven approach aids in making informed decisions about skill development, curriculum improvement, or candidate selection.
