@@ -13,7 +13,7 @@ Project Initial Report
 5.	Codewars: https://www.codewars.com/
 
 
-# List of features you want to implement.
+# List of features is implemented.
 **Real-Time Collaboration:** Allow multiple users to collaboratively work on a coding problem in real-time. This feature is beneficial for pair programming exercises and group projects.
 
 **Interactive Coding Environment:** Provide an integrated coding environment where users can write, compile, and run code directly within the platform.
