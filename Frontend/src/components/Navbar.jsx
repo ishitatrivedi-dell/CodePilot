@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import '../css/Navbar.css'
 
 import logo from '../assets/CPlogo.png'
@@ -8,21 +9,21 @@ function Navbar() {
     <>
         <div className="nav-bar">
             <div className="nav-left">
-                <a href=""><img src={logo} alt="" /></a>
+                <Link to="/"><img src={logo} alt="" /></Link>
             </div>
             <div className="nav-mid">
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Features</a></li>
-                    <li><a href="">Pricing</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Contact Us</a></li>
+                    <li><Link to="">Home</Link></li>
+                    <li><Link to="">Features</Link></li>
+                    <li><Link to="">Pricing</Link></li>
+                    <li><Link to="">About</Link></li>
+                    <li><Link to="">Contact Us</Link></li>
                 </ul>
             </div>
             <div className="nav-right">
                 <ul>
-                    <li><a href="">Log In</a></li>
-                    <li><a href="">Sign Up Now</a></li>
+                    <li><Link to="">Log In</Link></li>
+                    <li><Link to="">Sign Up Now</Link></li>
                 </ul>
             </div>
         </div>
