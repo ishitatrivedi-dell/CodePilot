@@ -1,25 +1,18 @@
-body,
-h1,
-h2,
-h3,
-p,
-ul {
-    margin: 0;
-    padding: 0;
+.foot-out{
+    padding-bottom: 0.5vh;
+    background-color: rgb(243, 242, 241);
 }
-
-
 .footer {
     display: flex;
     justify-content: space-between;
     margin: 5vh;
-    /* padding: 1vh; */
+    padding-bottom: 1vh;
     border-bottom: solid rgb(27, 23, 16) 0.7px;
 }
 
 
 .foot-left {
-    margin-left: 14vh;
+    margin-left: 3vh;
     display: flex;
     align-items: flex-start;
 }
