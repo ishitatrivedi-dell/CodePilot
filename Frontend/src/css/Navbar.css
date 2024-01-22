@@ -1,7 +1,7 @@
 
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: Bricolage Grotesque;
   }
   
   .nav-bar {
@@ -46,10 +46,10 @@ body {
   
 
   .nav-right li:last-child a {
-    background-color: #003eb3;
+    background-color: #4F46E5;
     color: #ffffff;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 1vh 1vh;
+    border-radius: 1vh;
     transition: background-color 0.3s ease;
   }
   
