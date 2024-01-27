@@ -9,12 +9,12 @@ function Navbar() {
     <>
         <div className="nav-bar">
             <div className="nav-left">
-                <Link to="/"><img src={logo} alt="" /></Link>
+                <Link to="/Home"><img src={logo} alt="" /></Link>
             </div>
             <div className="nav-mid">
                 <ul>
-                    <li><Link to="">Home</Link></li>
-                    <li><Link to="">Create Test</Link></li>
+                    <li><Link to="/Home">Home</Link></li>
+                    <li><Link to="/Create-test">Create Test</Link></li>
                     <li><Link to="">Attempt Test</Link></li>
                     <li><Link to="">About</Link></li>
                     <li><Link to="">Contact Us</Link></li>
@@ -27,6 +27,7 @@ function Navbar() {
                 </ul>
             </div>
         </div>
+        
     </>
   )
 }

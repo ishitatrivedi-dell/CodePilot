@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
+import Home from './components/Home.jsx'
 import HeroSection from './components/HeroSection.jsx'
 import Features from './components/Features.jsx'
 import Pricing from './components/Pricing.jsx'
+import CreateTest from './components/CreateTest.jsx'
 import {
   BrowserRouter as Router,
   Routes,
@@ -18,11 +20,13 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar/>
-        <HeroSection/>
-        <Features />
-        <Pricing/>
-        <Footer/>
+        <Navbar />
+        <Routes>
+          <Route path="/Create-test" element={<CreateTest />} />
+          <Route path="/Home" element={<Home />} />
+        </Routes>
+               
+        <Footer />
       </Router>
     </>
   )
