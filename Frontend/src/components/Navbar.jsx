@@ -14,8 +14,8 @@ function Navbar() {
             <div className="nav-mid">
                 <ul>
                     <li><Link to="">Home</Link></li>
-                    <li><Link to="">Features</Link></li>
-                    <li><Link to="">Pricing</Link></li>
+                    <li><Link to="">Create Test</Link></li>
+                    <li><Link to="">Attempt Test</Link></li>
                     <li><Link to="">About</Link></li>
                     <li><Link to="">Contact Us</Link></li>
                 </ul>

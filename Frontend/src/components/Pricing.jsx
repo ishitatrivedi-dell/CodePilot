@@ -24,7 +24,7 @@ function Pricing() {
                 <div className="price">
                     <div className="price-up">
                         <p className='plan-type'>Basic Plan</p>
-                        <p className="plan">$10 <span className="month">/month</span></p>
+                        <p className="plan">₹1000 <span className="month">/month</span></p>
                         <p id="button">
                             <Link to="">Get started</Link>
                         </p>
@@ -44,7 +44,7 @@ function Pricing() {
                 <div className="price">
                     <div className="price-up">
                         <p className='plan-type'>Pro Plan</p>
-                        <p className="plan">$20 <span className="month">/month</span></p>
+                        <p className="plan">₹2000 <span className="month">/month</span></p>
                         <p id="button">
                             <Link to="">Get started</Link>
                         </p>
@@ -64,7 +64,7 @@ function Pricing() {
                 <div className="price">
                     <div className="price-up">
                         <p className='plan-type'>Advanced Plan</p>
-                        <p className="plan">$30 <span className="month">/month</span></p>
+                        <p className="plan">₹3000 <span className="month">/month</span></p>
                         <p id="button">
                             <Link to="">Get started</Link>
                         </p>
