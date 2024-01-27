@@ -1,5 +1,6 @@
 import React from 'react'
 import arrow from '../assets/arrow.svg'
+
 import '../css/Features.css'
 
 
@@ -27,7 +28,7 @@ function Features() {
               <p>Attempt test and evaluate your self</p>
             </div>
             <div className="feat-3">
-              <p>Learn more <img src={arrow} alt="" id="arr-image"/></p>
+              <p>Learn more <img src={arrow} alt="" id="arr-image" /></p>
             </div>
           </div>
           <div className="feat">
@@ -53,7 +54,7 @@ function Features() {
             </div>
           </div>
 
-          
+
         </div>
       </div>
     </>

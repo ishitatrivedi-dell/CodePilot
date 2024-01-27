@@ -21,10 +21,18 @@
 }
 
 .features-down{
-    padding: 9vh 2vw 6vh 1vw;    
+    /*     
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-around; */
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 9vh 2vw 6vh 1vw;
+    gap: 10vw;
 }
 
 .feat{
