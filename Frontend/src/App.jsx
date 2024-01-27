@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import Navbar from './components/Navbar.jsx'
-import Footer from './components/Footer.jsx'
-import Home from './components/Home.jsx'
-import HeroSection from './components/HeroSection.jsx'
-import Features from './components/Features.jsx'
-import Pricing from './components/Pricing.jsx'
-import CreateTest from './components/CreateTest.jsx'
+import { useState } from 'react';
+import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
+import HeroSection from './components/HeroSection.jsx';
+import Features from './components/Features.jsx';
+import Pricing from './components/Pricing.jsx';
+import CodePilot from './components/Home.jsx';
+import CreateTest from './components/CreateTest.jsx';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Link
 } from "react-router-dom";
-import './App.css'
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
       <Router>
-        <Navbar />
+        <Navbar/>
         <Routes>
-          <Route path="/Create-test" element={<CreateTest />} />
-          <Route path="/Home" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/create-test" element={<CreateTest />} />
+          <Route path="/CodePilot" element={<CodePilot />} />
         </Routes>
-               
-        <Footer />
+        <Footer/>
       </Router>
     </>
-  )
+  );
 }
 
-export default App
+function Home() {
+  return (
+    <>
+      <HeroSection/>
+      <Features />
+      <Pricing/>
+    </>
+  );
+}
+
+export default App;
