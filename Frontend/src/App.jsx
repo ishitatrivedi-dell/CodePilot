@@ -20,7 +20,7 @@ function App() {
       <Router>
         <Navbar/>
         <HeroSection/>
-        <Features/>
+        <Features />
         <Pricing/>
         <Footer/>
       </Router>
