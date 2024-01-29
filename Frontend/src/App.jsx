@@ -6,6 +6,7 @@ import Features from './components/Features.jsx';
 import Pricing from './components/Pricing.jsx';
 import CodePilot from './components/Home.jsx';
 import CreateTest from './components/CreateTest.jsx';
+import Login from './components/Login.jsx';
 import {
   BrowserRouter as Router,
   Routes,
@@ -25,6 +26,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/create-test" element={<CreateTest />} />
           <Route path="/CodePilot" element={<CodePilot />} />
+          <Route path="/Login" element={<Login />} />
         </Routes>
         <Footer/>
       </Router>

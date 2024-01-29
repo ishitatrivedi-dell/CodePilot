@@ -41,7 +41,7 @@ body {
   
   .nav-mid a:hover,
   .nav-right a:hover {
-    color: #ffcc00; 
+    color:#3498db; 
   }
   
 
@@ -54,7 +54,7 @@ body {
   }
   
   .nav-right li:last-child a:hover {
-    background-color: #e6b800;
+    background-color: #3498db;
   }
   
   
