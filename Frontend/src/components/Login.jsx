@@ -1,5 +1,6 @@
 import React from 'react'
 import CodePilot from '../assets/CodeiPilotAI.jpg'
+import CodePilotGif from '../assets/CodePilotGIF.gif'
 
 import '../css/Login.css'
 function Login() {
@@ -8,7 +9,7 @@ function Login() {
             <div className="login">
                 <div className="login-card">
                     <div className="login-left">
-                        <img src={CodePilot} alt="" />
+                        <img src={CodePilotGif} alt="" />
                     </div>
                     <div className="login-right">
                         <div className="login-right-card">
