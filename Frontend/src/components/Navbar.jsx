@@ -26,7 +26,7 @@ function Navbar({ onLogin }) {
                 </div>
                 <div className="nav-right">
                     <ul>
-                        {/* <li><Link to="/Login" onClick={handleLogin}>Log In</Link></li> */}
+                        
                         <li><Link to="/Login">Log In</Link></li>
                         <li><Link to="">Sign Up Now</Link></li>
                     </ul>
