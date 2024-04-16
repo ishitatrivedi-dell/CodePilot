@@ -6,6 +6,8 @@ import Features from './components/Features.jsx';
 import Pricing from './components/Pricing.jsx';
 import CodePilot from './components/Home.jsx';
 import CreateTest from './components/CreateTest.jsx';
+import AttemptTest from './components/AttemptTest.jsx';
+
 import Login from './components/Login.jsx';
 import {
   BrowserRouter as Router,
@@ -16,19 +18,30 @@ import {
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [showNavbarAndFooter, setShowNavbarAndFooter] = useState(true);
+
+  const handleLoginClick = () => {
+    setShowNavbarAndFooter(false);
+  };
+
+  const handleLogout = () => {
+    setShowNavbarAndFooter(true);
+  };
+
 
   return (
     <>
       <Router>
-        <Navbar/>
+        {showNavbarAndFooter && <Navbar />}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/create-test" element={<CreateTest />} />
+          <Route path="/attempt-test" element={<AttemptTest />} />
           <Route path="/CodePilot" element={<CodePilot />} />
+          {/* <Route path="/Login" element={<Login onLogin={handleLoginClick} onLogout={handleLogout} />} /> */}
           <Route path="/Login" element={<Login />} />
         </Routes>
-        <Footer/>
+        {showNavbarAndFooter && <Footer />}
       </Router>
     </>
   );
@@ -37,9 +50,9 @@ function App() {
 function Home() {
   return (
     <>
-      <HeroSection/>
+      <HeroSection />
       <Features />
-      <Pricing/>
+      <Pricing />
     </>
   );
 }
