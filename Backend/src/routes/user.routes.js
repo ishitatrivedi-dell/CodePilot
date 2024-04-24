@@ -15,6 +15,7 @@ router.route("/register").post(
             maxCount: 1
         }
     ]),
+    // console.log(registerUser),
     registerUser
 )
 
