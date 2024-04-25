@@ -1,11 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import axios from 'axios';
 import CodePilotGif from '../assets/CodePilotGIF.gif'
 
 import '../css/Login.css'
 function Login() {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState(null)
+    
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        try {
+            const response = await axios.post('/api/v1/users/login', { email, password });
+            if (response.status === 200) {
+                // Handle successful login
+                console.log(response.data);
+                alert('Login successful!');
+            }
+        } catch (error) {
+            if (error.response) {
+                setError(error.response.data.message);
+            } else if (error.request) {
+                setError('Network error');
+            } else {
+                setError('Unknown error');
+            }
+        }
+    }
     return (
         <>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="login">
                     <div className="login-card">
                         <div className="login-left">
@@ -19,10 +46,10 @@ function Login() {
                                 </div>
                                 <div className="login-input">
                                     <div className="login__field">
-                                        <input type="text" className="login__input" placeholder="User name / Email" />
+                                        <input type="text" className="login__input" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                                     </div>
                                     <div className="login__field">
-                                        <input type="password" className="login__input" placeholder="Password" />
+                                        <input type="password" className="login__input" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                                     </div>
                                     <div>
                                         <button className="btn"><i className="animation"></i>LogIn<i className="animation"></i>
@@ -34,6 +61,9 @@ function Login() {
                     </div>
                 </div>
             </form>
+            <div className="error">
+                {error && <p>{error}</p>}
+            </div>
         </>
     )
 }
