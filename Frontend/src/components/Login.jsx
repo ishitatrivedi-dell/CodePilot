@@ -4,7 +4,7 @@ import axios from 'axios';
 import CodePilotGif from '../assets/CodePilotGIF.gif'
 
 import '../css/Login.css'
-function Login() {
+function Login({ setIsLoggedIn }) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState(null)
@@ -19,6 +19,7 @@ function Login() {
                 // Handle successful login
                 console.log(response.data);
                 alert('Login successful!');
+                setIsLoggedIn(true);
             }
         } catch (error) {
             if (error.response) {

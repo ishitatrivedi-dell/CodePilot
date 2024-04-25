@@ -1,12 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../css/Navbar.css'
-function Logout() {
+function Logout({ onLogout, setIsLoggedIn }) {
+    
+    const handleLogout = () => {
+        onLogout();
+        setIsLoggedIn(false);
+    };
     return (
         <>
             <div className="nav-right">
                 <ul>
-                    <li><Link to="/Login">Logout</Link></li>                    
+                    <li onClick={handleLogout}><Link to="/Login">Logout</Link></li>
                 </ul>
             </div>
         </>

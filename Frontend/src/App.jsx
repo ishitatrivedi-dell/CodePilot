@@ -20,19 +20,20 @@ import {
 import './App.css';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <>
       <Router>
-        <Navbar  />
+        <Navbar  isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/create-test" element={<CreateTest />} />
           <Route path="/attempt-test" element={<AttemptTest />} />
           <Route path="/CodePilot" element={<CodePilot />} />
-          <Route path="/Login" element={<Login />} />
+          <Route path="/Login" element={<Login setIsLoggedIn={setIsLoggedIn}/>} />
           <Route path="/Register" element={<Register />} />
-          <Route path="/Logout" element={<Logout />} />
+          <Route path="/Logout" element={<Logout setIsLoggedIn={setIsLoggedIn}/>} />
 
         </Routes>
         <Footer />

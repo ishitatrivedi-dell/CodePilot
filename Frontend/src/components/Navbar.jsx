@@ -5,14 +5,7 @@ import '../css/Navbar.css'
 
 import logo from '../assets/CPlogo.png'
 
-function Navbar() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-    useEffect(() => {
-        const token = localStorage.getItem('token');
-        setIsLoggedIn(!!token);
-    }, []);
-
+function Navbar({ isLoggedIn, setIsLoggedIn }) {
     const handleLogout = () => {
         setIsLoggedIn(false);
     };
@@ -36,7 +29,7 @@ function Navbar() {
                     <ul>
                         {isLoggedIn ? (
                             <li>
-                                <Logout onLogout={handleLogout} />
+                                <Logout onLogout={handleLogout} setIsLoggedIn={setIsLoggedIn} />
                             </li>
                         ) : (
                             <>
