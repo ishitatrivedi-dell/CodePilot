@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Logout from './Logout';
 import '../css/Navbar.css'
 
 import logo from '../assets/CPlogo.png'
@@ -23,9 +24,9 @@ function Navbar() {
                 </div>
                 <div className="nav-right">
                     <ul>
-                        
                         <li><Link to="/Login">Log In</Link></li>
                         <li><Link to="/Register">Sign Up Now</Link></li>
+                        <li><Logout /></li>
                     </ul>
                 </div>
             </div>
