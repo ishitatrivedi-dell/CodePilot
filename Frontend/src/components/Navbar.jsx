@@ -4,11 +4,8 @@ import '../css/Navbar.css'
 
 import logo from '../assets/CPlogo.png'
 
-function Navbar({ onLogin }) {
-    // const handleLogin = () => {
-        
-    //     onLogin();
-    // };
+function Navbar() {
+    
     return (
         <>
             <div className="nav-bar">
@@ -28,7 +25,7 @@ function Navbar({ onLogin }) {
                     <ul>
                         
                         <li><Link to="/Login">Log In</Link></li>
-                        <li><Link to="">Sign Up Now</Link></li>
+                        <li><Link to="/Register">Sign Up Now</Link></li>
                     </ul>
                 </div>
             </div>
