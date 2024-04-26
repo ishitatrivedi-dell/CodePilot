@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import ViewInArSharpIcon from '@mui/icons-material/ViewInArSharp';
+import Fundamentalmcq from './Fundamentalmcq';
 import '../css/CreateTest.css'
 
 function CreateTest() {
@@ -61,7 +62,7 @@ function CreateTest() {
                         </div>
                         <div className="cc-right">
                             <p className="ccr-head">
-                                <Link to="">Attempt Fundamental MCQ</Link>
+                                <Link to="/fundamentalmcq">Attempt Fundamental MCQ</Link>
                             </p>
                             <p className="ccr-explain">
                                 Attempt computer fundamental MCQ

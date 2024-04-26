@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import CodePilotGif from '../assets/CodePilotGIF.gif'
 
 import '../css/Login.css'
-function Login() {
+function Login({ setIsLoggedIn, setAvatar}) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState(null)
     
+    const navigate = useNavigate();
 
 
     const handleSubmit = async (e) => {
@@ -16,9 +17,10 @@ function Login() {
         try {
             const response = await axios.post('/api/v1/users/login', { email, password });
             if (response.status === 200) {
-                // Handle successful login
                 console.log(response.data);
                 alert('Login successful!');
+                setIsLoggedIn(true);
+                navigate('/CodePilot');                
             }
         } catch (error) {
             if (error.response) {

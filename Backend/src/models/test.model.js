@@ -11,17 +11,35 @@ const attemptedTestSchema = new Schema(
       type: String,
       required: true,
     },
-    timeTaken: {
+    questions: [
+      {
+        question: {
+          type: Schema.Types.ObjectId,
+          ref: "Question",
+          required: true,
+        },
+        selectedChoice: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
+    score: {
       type: Number,
-      required: true, // Time taken in seconds
+      required: true,
+      default: 0,
     },
-    totalMarks: {
+    totalQuestions: {
       type: Number,
       required: true,
     },
-    marksObtained: {
-      type: Number,
+    startedAt: {
+      type: Date,
       required: true,
+      default: Date.now,
+    },
+    completedAt: {
+      type: Date,
     },
   },
   {
@@ -29,6 +47,4 @@ const attemptedTestSchema = new Schema(
   }
 );
 
-const AttemptedTest = mongoose.model("AttemptedTest", attemptedTestSchema);
-
-export default AttemptedTest;
+export const AttemptedTest = mongoose.model("AttemptedTest", attemptedTestSchema);

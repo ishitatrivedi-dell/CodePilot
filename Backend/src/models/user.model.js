@@ -35,7 +35,7 @@ const userSchema = new Schema(
         testHistory: [
             {
                 type: Schema.Types.ObjectId,
-                ref: "Video"
+                ref: "AttemptedTest"
             }
         ],
         password: {

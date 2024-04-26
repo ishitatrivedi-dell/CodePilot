@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import CodePilotGif from '../assets/CodePilotGIF.gif'
 
@@ -12,7 +12,7 @@ function Register() {
     const [avatar, setAvatar] = useState(null);
     const [coverImage, setCoverImage] = useState(null);
     const [error, setError] = useState(null)
-
+    const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData();
@@ -20,18 +20,18 @@ function Register() {
         formData.append("email", email);
         formData.append("username", username);
         formData.append("password", password);
-      
+
         // Spread the contents of avatar and coverImage FormData objects
         if (avatar) {
-          for (const [key, value] of avatar.entries()) {
-            formData.append(key, value);
-          }
+            for (const [key, value] of avatar.entries()) {
+                formData.append(key, value);
+            }
         }
-      
+
         if (coverImage) {
-          for (const [key, value] of coverImage.entries()) {
-            formData.append(key, value);
-          }
+            for (const [key, value] of coverImage.entries()) {
+                formData.append(key, value);
+            }
         }
 
         try {
@@ -47,6 +47,7 @@ function Register() {
                 // setCoverImage(null)
                 console.log(response.data)
                 alert('Registration successful!')
+                navigate('/login')
             }
         } catch (error) {
             if (error.response) {
@@ -64,13 +65,13 @@ function Register() {
         const formData = new FormData();
         formData.append("avatar", e.target.files[0]);
         setAvatar(formData);
-      };
-      
-      const handleCoverImageChange = (e) => {
+    };
+
+    const handleCoverImageChange = (e) => {
         const formData = new FormData();
         formData.append("coverImage", e.target.files[0]);
         setCoverImage(formData);
-      };
+    };
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -114,8 +115,8 @@ function Register() {
                         </div>
                     </div>
                 </div>
+                <p>Already have an account? <Link to="/login">Login</Link></p>
             </form>
-            <p>Already have an account? <Link to="/login">Login</Link></p>
         </>
     )
 }
