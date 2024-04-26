@@ -20,18 +20,18 @@ function Register() {
         formData.append("email", email);
         formData.append("username", username);
         formData.append("password", password);
-      
+
         // Spread the contents of avatar and coverImage FormData objects
         if (avatar) {
-          for (const [key, value] of avatar.entries()) {
-            formData.append(key, value);
-          }
+            for (const [key, value] of avatar.entries()) {
+                formData.append(key, value);
+            }
         }
-      
+
         if (coverImage) {
-          for (const [key, value] of coverImage.entries()) {
-            formData.append(key, value);
-          }
+            for (const [key, value] of coverImage.entries()) {
+                formData.append(key, value);
+            }
         }
 
         try {
@@ -64,13 +64,13 @@ function Register() {
         const formData = new FormData();
         formData.append("avatar", e.target.files[0]);
         setAvatar(formData);
-      };
-      
-      const handleCoverImageChange = (e) => {
+    };
+
+    const handleCoverImageChange = (e) => {
         const formData = new FormData();
         formData.append("coverImage", e.target.files[0]);
         setCoverImage(formData);
-      };
+    };
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -114,8 +114,8 @@ function Register() {
                         </div>
                     </div>
                 </div>
+                <p>Already have an account? <Link to="/login">Login</Link></p>
             </form>
-            <p>Already have an account? <Link to="/login">Login</Link></p>
         </>
     )
 }
