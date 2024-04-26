@@ -1,38 +1,38 @@
 import mongoose, { Schema } from "mongoose";
 
-const optionSchema = new Schema(
+const choiceSchema = new Schema(
   {
     text: {
       type: String,
       required: true,
     },
-    isCorrect: {
-      type: Boolean,
-      required: true,
-      default: false,
-    },
   },
   {
-    _id: false, // Prevent Mongoose from creating a separate _id field for options
+    _id: false, // Prevent Mongoose from creating a separate _id field for choices
   }
 );
 
 const questionSchema = new Schema(
   {
-    text: {
+    question: {
       type: String,
       required: true,
     },
-    options: {
-      type: [optionSchema],
+    choices: {
+      type: [choiceSchema],
       required: true,
-      validate: {
-        validator: function (options) {
-          // Ensure at least one option is marked as correct
-          return options.some((option) => option.isCorrect);
+      validate: [
+        {
+          validator: function (choices) {
+            return choices.length > 0;
+          },
+          msg: "At least one choice is required.",
         },
-        message: "At least one option must be marked as correct.",
-      },
+      ],
+    },
+    correctAnswer: {
+      type: String,
+      required: true,
     },
     difficulty: {
       type: String,
@@ -42,9 +42,6 @@ const questionSchema = new Schema(
     category: {
       type: String,
       required: true,
-    },
-    explanation: {
-      type: String,
     },
   },
   {

@@ -21,7 +21,7 @@ export const getAllQuestions = async (req, res) => {
   }
 };
 
-// Get a question by ID
+// Get questions by category
 export const getQuestionByCategory = async (req, res) => {
   try {
     const category = req.params.category;

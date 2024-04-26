@@ -18,9 +18,8 @@ const attemptedTestSchema = new Schema(
           ref: "Question",
           required: true,
         },
-        selectedOption: {
-          type: Schema.Types.ObjectId,
-          ref: "Option",
+        selectedChoice: {
+          type: String,
           required: true,
         },
       },

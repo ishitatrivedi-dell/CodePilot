@@ -4,7 +4,7 @@ import axios from 'axios';
 import CodePilotGif from '../assets/CodePilotGIF.gif'
 
 import '../css/Login.css'
-function Login({ setIsLoggedIn }) {
+function Login({ setIsLoggedIn, setAvatar}) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState(null)
@@ -17,7 +17,6 @@ function Login({ setIsLoggedIn }) {
         try {
             const response = await axios.post('/api/v1/users/login', { email, password });
             if (response.status === 200) {
-                // Handle successful login
                 console.log(response.data);
                 alert('Login successful!');
                 setIsLoggedIn(true);

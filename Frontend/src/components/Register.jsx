@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import CodePilotGif from '../assets/CodePilotGIF.gif'
 
@@ -12,7 +12,7 @@ function Register() {
     const [avatar, setAvatar] = useState(null);
     const [coverImage, setCoverImage] = useState(null);
     const [error, setError] = useState(null)
-
+    const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData();
@@ -47,6 +47,7 @@ function Register() {
                 // setCoverImage(null)
                 console.log(response.data)
                 alert('Registration successful!')
+                navigate('/login')
             }
         } catch (error) {
             if (error.response) {
