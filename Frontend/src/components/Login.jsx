@@ -20,6 +20,8 @@ function Login({ setIsLoggedIn, setAvatar}) {
                 console.log(response.data);
                 alert('Login successful!');
                 setIsLoggedIn(true);
+                // console.log(response.data.avatar)
+                setAvatar(response.data.avatar);
                 navigate('/CodePilot');                
             }
         } catch (error) {

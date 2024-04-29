@@ -3,7 +3,23 @@ import { Question } from "../models/question.model.js";
 // Create a new question
 export const createQuestion = async (req, res) => {
   try {
-    const newQuestion = new Question(req.body);
+    const { question, choices, difficulty, category } = req.body;
+
+    // Check if at least one choice has the value field set to true
+    const hasCorrectChoice = choices.some((choice) => choice.value === true);
+    if (!hasCorrectChoice) {
+      return res
+        .status(400)
+        .json({ error: "At least one choice must be marked as correct" });
+    }
+
+    const newQuestion = new Question({
+      question,
+      choices,
+      difficulty,
+      category,
+    });
+
     await newQuestion.save();
     res.status(201).json(newQuestion);
   } catch (error) {
@@ -24,7 +40,9 @@ export const getAllQuestions = async (req, res) => {
 // Get questions by category
 export const getQuestionByCategory = async (req, res) => {
   try {
-    const category = req.params.category;
+    const category = req.query.category;
+    console.log('Category:', category);
+    
     const questions = await Question.find({ category });
     if (questions.length === 0) {
       return res
@@ -40,9 +58,19 @@ export const getQuestionByCategory = async (req, res) => {
 // Update a question
 export const updateQuestion = async (req, res) => {
   try {
+    const { question, choices, difficulty, category } = req.body;
+
+    // Check if at least one choice has the value field set to true
+    const hasCorrectChoice = choices.some((choice) => choice.value === true);
+    if (!hasCorrectChoice) {
+      return res
+        .status(400)
+        .json({ error: "At least one choice must be marked as correct" });
+    }
+
     const updatedQuestion = await Question.findByIdAndUpdate(
       req.params.id,
-      req.body,
+      { question, choices, difficulty, category },
       { new: true }
     );
     if (!updatedQuestion) {

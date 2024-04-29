@@ -11,6 +11,7 @@ import AttemptTest from './components/AttemptTest.jsx';
 import Register from './components/Register.jsx';
 import Login from './components/Login.jsx';
 import Logout from './components/Logout.jsx';
+import CategoryMcq from './components/CategoryMcq.jsx';
 import Fundamentalmcq from './components/Fundamentalmcq.jsx';
 
 import {
@@ -38,7 +39,11 @@ function App() {
           <Route path="/Login" element={<Login setIsLoggedIn={setIsLoggedIn} setAvatar={setAvatar}/>} />
           <Route path="/Register" element={<Register />} />
           <Route path="/Logout" element={<Logout setIsLoggedIn={setIsLoggedIn} />} />
-          <Route
+          <Route 
+            path="/CategoryMcq"
+            element={<CategoryMcq  isLoggedIn={isLoggedIn}/>}
+          />
+          <Route 
             path="/Fundamentalmcq"
             element={<Fundamentalmcq isLoggedIn={isLoggedIn} />}
           />
