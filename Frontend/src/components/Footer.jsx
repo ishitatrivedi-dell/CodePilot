@@ -29,7 +29,7 @@ function Footer() {
                             <ul>
                                 <li><b>Reach Us</b></li>
                                 <li>(+91) 9125049539</li>
-                                <li>aysuhsrivastav121@gmail.com</li>
+                                <li>hritikraj121@gmail.com</li>
                             </ul>
                             <div className="social-logo">
                                 <img src={facebook} alt="" />
