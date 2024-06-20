@@ -1,18 +1,37 @@
 import { AttemptedTest } from "../models/test.model.js";
-
+import { User } from "../models/user.model.js";
 // Create a new attempted test
 export const createAttemptedTest = async (req, res) => {
   try {
-    const { user, testName, questions, totalQuestions } = req.body;
+    // Extract the userId from the request object
+    const userId = await User.findById(req.user._id);
+
+    const { testName, questions, totalQuestions, score, startedAt, completedAt } = req.body;
+
+    // Find the user by userId
+    const user = await User.findById(userId);
+    console.log(`User: ${user}`)
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
 
     const newAttemptedTest = new AttemptedTest({
-      user,
+      user: user._id,
       testName,
       questions,
       totalQuestions,
+      score,
+      startedAt,
+      completedAt,
     });
 
     await newAttemptedTest.save();
+
+    // Update the user's testHistory
+    user.testHistory.push(newAttemptedTest._id);
+    await user.save();
+
     res.status(201).json(newAttemptedTest);
   } catch (error) {
     res.status(400).json({ error: error.message });

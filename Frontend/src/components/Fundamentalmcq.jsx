@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation,useNavigate } from 'react-router-dom';
 import '../css/Fundamentalmcq.css';
 
-function Fundamentalmcq() {
+function Fundamentalmcq({ isLoggedIn }) {
   const navigate = useNavigate();
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate('/login');
+    }
+  }, [isLoggedIn, navigate]);
+
+
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const type = queryParams.get('type');
@@ -28,7 +35,8 @@ function Fundamentalmcq() {
           console.log(`No questions found for category ${type}`);
           setQuestions([]);
         } else {
-          setQuestions(response.data);
+          const firstFifteenQuestions = response.data.slice(0, 5);
+          setQuestions(firstFifteenQuestions);
         }
       } catch (error) {
         console.error('Error fetching questions:', error);
@@ -49,7 +57,7 @@ function Fundamentalmcq() {
     }
   };
 
-  const handleNextQuestion = () => {
+  const handleNextQuestion = async () => {
     setSelectedChoice(null);
     setShowCorrectAnswer(false);
     const nextQuestion = currentQuestion + 1;
@@ -57,7 +65,27 @@ function Fundamentalmcq() {
       setCurrentQuestion(nextQuestion);
     } else {
       // Quiz has ended, display final score
-      alert(`Quiz has ended. Your final score is ${score} out of ${questions.length}`);
+      try {
+        const startedAt = new Date(); // Get the current date/time when the quiz started
+        const testResult = {
+          testName: type,
+          questions: questions.map((question, index) => ({
+            question: question._id,
+            choiceValue: question.choices.find((choice) => choice.value === true).value,
+          })),
+          totalQuestions: questions.length,
+          score: score,
+          startedAt: startedAt, 
+          completedAt: new Date(), 
+        };
+        await axios.post('/api/v1/tests/create', testResult);
+        console.log('Test result saved successfully');
+        alert(`Quiz has ended. Your final score is ${score} out of ${questions.length}`);
+
+      } catch (error) {
+        console.error('Error saving test result:', error);
+      }
+      // alert(`Quiz has ended. Your final score is ${score} out of ${questions.length}`);
     }
   };
 
