@@ -1,8 +1,8 @@
 Project Initial Report
 # Project Name: ##CodePilot
 # Glimpses
-https://drive.google.com/file/d/1-blKDuJReXPF8DMVE1h-EYXpFqpev4JM/view?usp=sharing
-https://drive.google.com/file/d/18HBU1N1fJDioVv4AnYrFQ6RbWt36vqrP/view?usp=sharing
+![Alt Text](https://drive.google.com/file/d/1-blKDuJReXPF8DMVE1h-EYXpFqpev4JM/view?usp=sharing)
+![Alt Text](https://drive.google.com/file/d/18HBU1N1fJDioVv4AnYrFQ6RbWt36vqrP/view?usp=sharing)
 
 
 # Which problem is Project Solving?
