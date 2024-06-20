@@ -32,9 +32,9 @@ function Navbar({ isLoggedIn, setIsLoggedIn, avatar}) {
                             <li>
                                 <Logout onLogout={handleLogout} setIsLoggedIn={setIsLoggedIn} />
                             </li>
-                            <li>
+                            {/* <li>
                                 <img src={avatar} alt="avatarImage" className="avatar-image"/>
-                            </li>
+                            </li> */}
                             </>
                             
                         ) : (

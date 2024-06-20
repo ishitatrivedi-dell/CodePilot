@@ -41,7 +41,7 @@ export const getAllQuestions = async (req, res) => {
 export const getQuestionByCategory = async (req, res) => {
   try {
     const category = req.query.category;
-    console.log('Category:', category);
+    // console.log('Category:', category);
     
     const questions = await Question.find({ category });
     if (questions.length === 0) {
