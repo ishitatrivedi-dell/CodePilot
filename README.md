@@ -2,8 +2,7 @@ Project Initial Report
 # Project Name: ##CodePilot
 # Glimpses
 ![Screenshot (1070)](https://github.com/Hritik262/CodePilot/assets/122631279/cce5462e-e55d-438d-be1c-51f9985dbb59)
-![CodePilot - Google Chrome 2024-06-20 12-40-18 (online-video-cutter com)](https://github.com/Hritik262/CodePilot/assets/122631279/9262521f-357a-4ebb-b948-9feb649e4ff7)
-
+https://github.com/Hritik262/CodePilot/assets/122631279/d9cc50f8-31b0-4a66-8bbc-862925d28250
 
 # Which problem is Project Solving?
 - The website provides a centralized platform for creating, managing, and evaluating coding tests. This streamlines the assessment process, making it more efficient for both test creators and test-takers.
