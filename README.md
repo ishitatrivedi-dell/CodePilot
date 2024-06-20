@@ -1,8 +1,8 @@
 Project Initial Report
 # Project Name: ##CodePilot
 # Glimpses
-![Alt Text](https://drive.google.com/file/d/1-blKDuJReXPF8DMVE1h-EYXpFqpev4JM/view?usp=sharing)
-![Alt Text](https://drive.google.com/file/d/18HBU1N1fJDioVv4AnYrFQ6RbWt36vqrP/view?usp=sharing)
+![Screenshot (1070)](https://github.com/Hritik262/CodePilot/assets/122631279/cce5462e-e55d-438d-be1c-51f9985dbb59)
+![CodePilot - Google Chrome 2024-06-20 12-40-18 (online-video-cutter com)](https://github.com/Hritik262/CodePilot/assets/122631279/9262521f-357a-4ebb-b948-9feb649e4ff7)
 
 
 # Which problem is Project Solving?
