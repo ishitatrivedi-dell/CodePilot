@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   server:{
     proxy:{
-      '/api':'https://code-pilot-backend.vercel.app',
+      '/api':'https://codepilot-9q4e.onrender.com',
     },
   },
   plugins: [react()],
