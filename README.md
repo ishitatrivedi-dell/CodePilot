@@ -1,7 +1,5 @@
 Project Initial Report
-<<<<<<< HEAD
-## Project Name: CodePilot
-=======
+
 # Project Name: CodePilot
 >>>>>>> 9ea023b4bc470fe10212aa67b6ae8e9cddb661f2
 # Glimpses
