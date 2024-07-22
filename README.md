@@ -1,7 +1,6 @@
 Project Initial Report
 
 # Project Name: CodePilot
->>>>>>> 9ea023b4bc470fe10212aa67b6ae8e9cddb661f2
 # Glimpses
 ![Screenshot (1070)](https://github.com/Hritik262/CodePilot/assets/122631279/cce5462e-e55d-438d-be1c-51f9985dbb59)
 ![CodePilot - Google Chrome 2024-06-20 12-40-18 (online-video-cutter com)](https://github.com/Hritik262/CodePilot/assets/122631279/6d2fd574-9dc7-4c83-a6e2-03e0157efb99)
