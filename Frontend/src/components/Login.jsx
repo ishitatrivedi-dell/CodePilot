@@ -38,7 +38,7 @@ function Login({ setIsLoggedIn, setAvatar }) {
     // If there are no errors, proceed with login
     if (!emailError && !passwordError) {
       try {
-        const response = await axios.post('/api/v1/users/login', { email, password });
+        const response = await axios.post('https://codepilot-9q4e.onrender.com/api/v1/users/login', { email, password });
         if (response.status === 200) {
           console.log(response.data);
           alert('Login successful!');

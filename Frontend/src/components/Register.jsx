@@ -74,7 +74,7 @@ function Register() {
             }
 
             try {
-                const response = await axios.post('api/v1/users/register', formData)
+                const response = await axios.post('https://codepilot-9q4e.onrender.comapi/v1/users/register', formData)
                 if (response.status === 201) {
                     console.log(response.data)
                     alert('Registration successful!')

@@ -27,9 +27,9 @@ function Fundamentalmcq({ isLoggedIn }) {
       try {
         let response;
         if (type === 'Mix Type') {
-          response = await axios.get('api/v1/questions/show');
+          response = await axios.get('https://codepilot-9q4e.onrender.com/api/v1/questions/show');
         } else {
-          response = await axios.get(`api/v1/questions/show/category?category=${type}`);
+          response = await axios.get(`https://codepilot-9q4e.onrender.com/api/v1/questions/show/category?category=${type}`);
         }
         if (response.data.length === 0) {
           console.log(`No questions found for category ${type}`);
@@ -78,7 +78,7 @@ function Fundamentalmcq({ isLoggedIn }) {
           startedAt: startedAt, 
           completedAt: new Date(), 
         };
-        await axios.post('/api/v1/tests/create', testResult);
+        await axios.post('https://codepilot-9q4e.onrender.com/api/v1/tests/create', testResult);
         console.log('Test result saved successfully');
         alert(`Quiz has ended. Your final score is ${score} out of ${questions.length}`);
 
