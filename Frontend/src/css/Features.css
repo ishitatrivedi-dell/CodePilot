@@ -1,4 +1,4 @@
-.features{
+.features {
     display: flex;
     flex-direction: column;
     background-color: #4F46E5;
@@ -6,60 +6,121 @@
     padding-top: 4vh;
 }
 
-.features-up{
-    padding: 3vh 20vw; 
+.features-up {
+    padding: 3vh 5vw; 
     text-align: center;
 }
 
-.sub-heading-1, .sub-heading-2{
-    font-size: 2vh;
+.sub-heading-1, .sub-heading-2 {
+    font-size: 14px;
 }
 
-.heading p{
+.heading p {
     font-weight: bold;
-    font-size: 6vh;
+    font-size: 24px;
 }
 
-.features-down{
-    /*     
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around; */
-
-    justify-content: center;
-    align-items: center;
+.features-down {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    padding: 9vh 2vw 6vh 1vw;
-    gap: 10vw;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4vh 2vw;
+    gap: 4vw;
 }
 
-.feat{
+.feat {
     display: flex;
     flex-direction: column;
-    /* padding-left: 2vh; */
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 4vh;
 }
 
-.feat-1{
-    font-size: 2.5vh;
+.feat-1 {
+    font-size: 18px;
     font-weight: bold;
 }
 
-.feat-2{
+.feat-2 {
     margin-top: 2vh;
-    margin-bottom: 6vh;
+    margin-bottom: 2vh;
     color: #ccccd9;
 }
-.feat-2, .feat-3 p{
-    font-size: 1.5vh;
+
+.feat-2, .feat-3 p {
+    font-size: 14px;
 }
 
-#arr-image{
+#arr-image {
     fill: white;
 }
 
-.feat-3 p img{
+.feat-3 p img {
     height: auto;
-    width: 2vh;
+    width: 14px;
+    vertical-align: middle;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (min-width: 576px) {
+    .features-up {
+        padding: 3vh 10vw;
+    }
+
+    .sub-heading-1, .sub-heading-2 {
+        font-size: 16px;
+    }
+
+    .heading p {
+        font-size: 32px;
+    }
+
+    .feat {
+        width: calc(50% - 2vw);
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .features-up {
+        padding: 3vh 15vw;
+    }
+
+    .sub-heading-1, .sub-heading-2 {
+        font-size: 18px;
+    }
+
+    .heading p {
+        font-size: 40px;
+    }
+
+    .features-down {
+        gap: 6vw;
+    }
+
+    .feat {
+        width: calc(33.33% - 4vw);
+    }
+
+    .feat-1 {
+        font-size: 20px;
+    }
+
+    .feat-2, .feat-3 p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .features-up {
+        padding: 3vh 20vw;
+    }
+
+    .heading p {
+        font-size: 48px;
+    }
+
+    .features-down {
+        gap: 8vw;
+    }
 }

@@ -65,21 +65,26 @@ body {
 .hamburger {
   display: none;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  background: none;
+  background-color: #4F46E5;
   border: none;
   padding: 10px;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
 }
 
 .hamburger span {
-  width: 30px;
+  width: 25px;
   height: 3px;
-  background-color: #4F46E5;
-  margin: 3px 0;
+  background-color: #ffffff;
+  margin: 2px 0;
   transition: all 0.3s ease;
 }
 
-.hamburger:hover span {
+.hamburger:hover {
   background-color: #3498db;
 }
 
@@ -102,7 +107,7 @@ body {
   }
 
   .hamburger.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
+    transform: rotate(-45deg) translate(5px, -5px);
   }
 
   .nav-left {
